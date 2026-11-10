@@ -1,0 +1,19 @@
+name: Workflow
+
+on: push
+
+jobs:
+  probar_software:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar mensaje
+        run: echo "Hola Actions!"
+
+      - name: Bajar código
+        uses: actions/checkout@v7
+
+      - name: Probar código
+        run: |
+          pip install pytest
+          pytest test.py
